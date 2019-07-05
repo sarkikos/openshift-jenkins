@@ -5,6 +5,9 @@
         "app": "pipeline-example",
         "template": "pipeline-example"
     },
+    "metadata": {
+        "name": "pipeline-example"
+    },
 
     "objects": [
         {
