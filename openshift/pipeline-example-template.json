@@ -29,6 +29,26 @@
                     "type": "Docker"
                 }
             }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "BuildConfig",
+            "metadata": {
+                "name": "pipeline"
+            },
+            "spec": {
+                "source": {
+                    "git": {
+                        "uri": "https://github.com/sarkikos/openshift-jenkins"
+                    },
+                    "type": "Git"
+                },
+                "strategy": {
+                    "jenkinsPipelineStrategy": {
+                    },
+                    "type": "Jenkins"
+                }
+            }
         }
     ]
 }

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Template
+metadata:
+  labels:
+    app: pipeline-example
+    template: pipeline-example
+  name: pipeline-example
+objects:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    name: docker-build-foo123
+  spec:
+    source:
+      git:
+        uri: https://github.com/sarkikos/openshift-jenkins
+      type: Git
+    strategy:
+      dockerStrategy:
+        dockerfilePath: Dockerfile
+      type: Docker
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    name: pipeline
+  spec:
+    source:
+      git:
+        uri: https://github.com/sarkikos/openshift-jenkins
+    type: Git
+    strategy:
+      jenkinsPipelineStrategy:
+        jenkinsfilePath: Jenkinsfile
