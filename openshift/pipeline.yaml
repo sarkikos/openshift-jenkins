@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: pipeline
+spec:
+  source:
+    git:
+      uri: https://github.com/sarkikos/openshift-jenkins
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
